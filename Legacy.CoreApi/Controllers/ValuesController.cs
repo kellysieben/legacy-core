@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Legacy.CoreApi.Data;
-using Legacy.CoreApi.Model;
+using Legacy.CoreApi.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Legacy.CoreApi.Controllers

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Legacy.CoreApi.Model
+namespace Legacy.CoreApi.Models
 {
     public class Value
     {
