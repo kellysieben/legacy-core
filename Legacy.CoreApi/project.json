@@ -14,9 +14,7 @@
     "Microsoft.Extensions.Logging": "1.0.0",
     "Microsoft.Extensions.Logging.Console": "1.0.0",
     "Microsoft.Extensions.Logging.Debug": "1.0.0",
-    "Microsoft.Extensions.Options.ConfigurationExtensions": "1.0.0",
-    "Microsoft.EntityFrameworkCore": "2.0.0-preview1-final",
-    "Microsoft.EntityFrameworkCore.InMemory": "1.1.1"
+    "Microsoft.Extensions.Options.ConfigurationExtensions": "1.0.0"
   },
 
   "tools": {
