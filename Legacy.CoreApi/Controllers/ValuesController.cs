@@ -1,4 +1,7 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
+using Legacy.CoreApi.Data;
+using Legacy.CoreApi.Model;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Legacy.CoreApi.Controllers
@@ -6,24 +9,35 @@ namespace Legacy.CoreApi.Controllers
     [Route("api/[controller]")]
     public class ValuesController : Controller
     {
+        private readonly IDataStore _dataStore = new InMemoryDataStore();
+
         // GET api/values
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IEnumerable<Value> Get()
         {
-            return new[] { "value1", "value2" };
+            return _dataStore.GetAll.Cast<Value>();
         }
 
         // GET api/values/5
-        [HttpGet("{id}")]
-        public string Get(int id)
+        [HttpGet("{id:int}")]
+        public Value Get(int id)
         {
-            return "value";
+            return _dataStore.GetAll[id] as Value;
         }
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody]string value)
+        [Produces("application/json", Type = typeof(Value))]
+        public IActionResult Post([FromBody]Value value)
         {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            _dataStore.Add(value);
+            // REST common practice (good citizen) is to return the location of the new resource
+            return CreatedAtAction("Get", new {id = value.Id}, value);
         }
 
         // PUT api/values/5
