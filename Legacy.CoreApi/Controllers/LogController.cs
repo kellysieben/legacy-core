@@ -5,8 +5,6 @@ using Legacy.CoreApi.Data;
 using Legacy.CoreApi.Models;
 using Microsoft.AspNetCore.Mvc;
 
-// For more information on enabling Web API for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
-
 namespace Legacy.CoreApi.Controllers
 {
     [Route("api/[controller]")]

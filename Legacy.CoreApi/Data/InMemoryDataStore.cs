@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using Legacy.CoreApi.Controllers;
 
 namespace Legacy.CoreApi.Data
 {

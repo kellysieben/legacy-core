@@ -36,7 +36,6 @@ namespace Legacy.CoreApi.Controllers
             }
 
             _dataStore.Add(value);
-            // REST common practice (good citizen) is to return the location of the new resource
             return CreatedAtAction("Get", new {id = value.Id}, value);
         }
 
